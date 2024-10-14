@@ -13,12 +13,6 @@ public class CleanerPlugin extends PluginBase {
      */
     private static final int DEFAULT_TPS = 20;
 
-    private static CleanerPlugin INSTANCE;
-
-    public static CleanerPlugin getInstance() {
-        return INSTANCE;
-    }
-
     /**
      * Invoked on plugin enabling, when server starts
      */

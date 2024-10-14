@@ -6,7 +6,7 @@ import net.uniloftsky.nukkit.cleaner.config.CleanerConfig;
 /**
  * Cleaner task scheduled to clean up corresponding entities
  */
-public class CleanerTask extends Task {
+public final class CleanerTask extends Task {
 
     /**
      * Plugin instance

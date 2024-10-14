@@ -13,7 +13,7 @@ import java.nio.file.Path;
 /**
  * Class to hold configurable data such a cleaning interval, types of entities that should be cleaned, etc.
  */
-public class CleanerConfig {
+public final class CleanerConfig {
 
     /**
      * Name of main config
@@ -87,31 +87,38 @@ public class CleanerConfig {
             }
 
             configInitialized = true;
+            plugin.getLogger().info("Configuration initialized with the following options: " + this.toString());
         }
         return true;
     }
 
     public int getInterval() {
+        isInitialized();
         return this.interval;
     }
 
-    public boolean cleanItems() {
+    public boolean isCleanItems() {
+        isInitialized();
         return this.cleaningScope.isItems();
     }
 
-    public boolean cleanMobs() {
+    public boolean isCleanMobs() {
+        isInitialized();
         return this.cleaningScope.isMobs();
     }
 
-    public boolean cleanAnimals() {
+    public boolean isCleanAnimals() {
+        isInitialized();
         return this.cleaningScope.isAnimals();
     }
 
-    public boolean cleanXp() {
+    public boolean isCleanXp() {
+        isInitialized();
         return this.cleaningScope.isXp();
     }
 
-    public boolean cleanProjectiles() {
+    public boolean isCleanProjectiles() {
+        isInitialized();
         return this.cleaningScope.isProjectiles();
     }
 
@@ -133,4 +140,11 @@ public class CleanerConfig {
 
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "interval=" + interval +
+                ", scope=" + cleaningScope +
+                '}';
+    }
 }

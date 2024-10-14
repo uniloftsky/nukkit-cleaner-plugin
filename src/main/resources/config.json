@@ -1,0 +1,10 @@
+{
+  "interval": 1000,
+  "scope": {
+    "items": true,
+    "mobs": true,
+    "animals": true,
+    "xp": true,
+    "projectiles": true
+  }
+}

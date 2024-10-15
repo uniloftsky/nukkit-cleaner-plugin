@@ -35,13 +35,14 @@ public final class CleanerTask extends Task {
     /**
      * Entity clean index. Key - type of entity to be cleaned, value - flag if entity should be cleaned
      */
-    private final Map<Class<? extends Entity>, Boolean> entityCleanIndex = new HashMap<>();
+    private Map<Class<? extends Entity>, Boolean> entityCleanIndex;
 
     public CleanerTask(CleanerPlugin plugin, CleanerConfig config) {
         this.plugin = plugin;
         this.config = config;
 
         // initializing entity clean index
+        entityCleanIndex = new HashMap<>();
         entityCleanIndex.put(EntityItem.class, config.isCleanItems());
         entityCleanIndex.put(EntityWalkingAnimal.class, config.isCleanAnimals());
         entityCleanIndex.put(EntityWaterAnimal.class, config.isCleanAnimals());

@@ -3,4 +3,4 @@ main: net.uniloftsky.nukkit.cleaner.CleanerPlugin
 version: "${pom.version}"
 api: [ "1.0.0" ]
 author: uniloftsky
-description: Cleaner plugin to clean up entities, dropped items
+description: Cleaner plugin to clean up entities, dropped items etc.

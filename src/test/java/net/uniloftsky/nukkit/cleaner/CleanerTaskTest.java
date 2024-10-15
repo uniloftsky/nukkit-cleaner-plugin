@@ -39,6 +39,7 @@ public class CleanerTaskTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
+        // mocking the clean index configuration
         when(config.isCleanItems()).thenReturn(true);
         when(config.isCleanXp()).thenReturn(false);
         when(config.isCleanAnimals()).thenReturn(true);
@@ -59,6 +60,7 @@ public class CleanerTaskTest {
         Level world = mock(Level.class);
         given(server.getLevels()).willReturn(Map.of(1, world));
 
+        // mocking level entities
         EntityItem mockedItemEntity = mock(EntityItem.class);
         EntityXPOrb mockedXpOrbEntity = mock(EntityXPOrb.class);
         EntityWalkingAnimal mockedWalkingAnimalEntity = mock(EntityWalkingAnimal.class);
@@ -71,9 +73,13 @@ public class CleanerTaskTest {
         // then
         then(world).should().unloadChunks();
         then(logger).should(times(3)).info(anyString());
+
+        // should be cleared corresponding to mocked clean index
         then(mockedItemEntity).should().despawnFromAll();
-        then(mockedXpOrbEntity).should(times(0)).despawnFromAll();
         then(mockedWalkingAnimalEntity).should().despawnFromAll();
+
+        // should not be cleared corresponding to mocked clean index
+        then(mockedXpOrbEntity).should(times(0)).despawnFromAll();
     }
 
 }

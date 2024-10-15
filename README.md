@@ -1,6 +1,6 @@
 # Nukkit Cleaner plugin
 
-Plugin for Nukkit that removes dropped items, entities periodically.
+A plugin for Nukkit that periodically removes dropped items and entities.
 
 # Configuration
 
@@ -18,8 +18,10 @@ This plugin can be configured via the `config.json` file. It contains the follow
 }
 ```
 
-Where `interval` defines the interval wherein entities are cleared. Should be specified in milliseconds.<br>
-`scope` object includes definition for what exact types of entities would be cleared. `items` for items entities, `mobs` for mobs entities, `animals` for animal entities, `xp` for dropped experience orbs, `projectiles` for existing projectiles such as arrows
+Where `interval` defines the time interval for clearing entities, specified in milliseconds.<br>
+`scope` object includes definition for the types of entities to be cleared. `items` refers to items entities, `mobs`
+to mob entities, `animals` to animal entities, `xp` to dropped experience orbs and `projectiles` to existing
+projectiles such as arrows.
 
 # What is Nukkit?
 

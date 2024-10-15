@@ -43,14 +43,24 @@ public final class CleanerTask extends Task {
 
         // initializing entity clean index
         entityCleanIndex = new HashMap<>();
+
+        // items
         entityCleanIndex.put(EntityItem.class, config.isCleanItems());
+
+        // animals
         entityCleanIndex.put(EntityWalkingAnimal.class, config.isCleanAnimals());
         entityCleanIndex.put(EntityWaterAnimal.class, config.isCleanAnimals());
         entityCleanIndex.put(EntityFlyingAnimal.class, config.isCleanAnimals());
+
+        // mobs
         entityCleanIndex.put(EntityWalkingMob.class, config.isCleanMobs());
         entityCleanIndex.put(EntityFlyingMob.class, config.isCleanMobs());
         entityCleanIndex.put(EntitySwimmingMob.class, config.isCleanMobs());
+
+        // xp orbs
         entityCleanIndex.put(EntityXPOrb.class, config.isCleanXp());
+
+        // projectiles
         entityCleanIndex.put(EntityProjectile.class, config.isCleanProjectiles());
     }
 
